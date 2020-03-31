@@ -20,4 +20,28 @@ angular.module('myApp',[])
                 localStorage.removeItem('note_key');
                 $scope.msg='';
             }
+                        $scope.todos=[
+              {name:'eat',isChecked:false},
+              {name:'sleep',isChecked:true},
+              {name:'code',isChecked:false},
+            ];
+            $scope.add=function(){
+              // collect and sort the data in an object
+              var obj = {
+                name:$scope.newToDo,
+                isChecked:false
+              };
+              // append to the todoList
+              $scope.todos.unshift(obj);
+              $scope.newToDo='';
+            }
+            $scope.del=function () {
+                var oldToDo = $scope.todos;
+                $scope.todos=[];
+                oldToDo.forEach(function(item,index){
+                  if(!item.isChecked){
+                    $scope.todos.push(item);
+                  }
+                })
+            }
       }]);
