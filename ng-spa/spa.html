@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        textarea{
+            resize:none;
+        }
+    </style>
+</head>
+<body ng-app="myApp">
+    <div ng-controller="myCtrl">
+        <h2>My Note</h2>
+        <textarea cols="40" rows="15" ng-model="msg"></textarea>
+        <div>
+            <button>Save</button>
+            <button>Read</button>
+            <button>Delete</button>
+        </div>
+        <p>Remaining characters: {{getCount()}}</p>
+    </div>
+    <script type="text/javascript" src="angular1o5.js"></script>
+    <script type="text/javascript" src="app.js"></script>
+</body>
+</html>
